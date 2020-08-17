@@ -7,13 +7,13 @@ This avoids having to declare sensors, often specifics to each provider, and use
 In addition, this version also adds the feature to display up to 4 days/hours of forecast.
 This is fully compliant with the official base widget, so any working configuration will also work with this widget.
 
-**Note: For 2x2 widget, only 1 forecast should be used. Up to for can be used in 3x2.**
+**Note: For 2x2 widget, only 1 forecast should be used with a 120x120 widget. Up to for can be used in 3x2.**
 
 #### 3x2 widget with 4 forecasts
-![Screenshot](https://github.com/vche/appdaemon_weatherentity/blob/master/etc/3x2.png)
+![Screenshot](https://github.com/vche/appdaemon_weatherentity/blob/master/etc/3x2.png =360x)
 
 #### 2x2 widget with 1 forecasts
-![Screenshot](https://github.com/vche/appdaemon_weatherentity/blob/master/etc/2x2.png)
+![Screenshot](https://github.com/vche/appdaemon_weatherentity/blob/master/etc/2x2.png =240x)
 
 ## Configuration
 
