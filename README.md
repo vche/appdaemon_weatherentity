@@ -10,10 +10,10 @@ This is fully compliant with the official base widget, so any working configurat
 **Note: For 2x2 widget, only 1 forecast should be used with a 120x120 widget. Up to for can be used in 3x2.**
 
 #### 3x2 widget with 4 forecasts
-![Screenshot](https://github.com/vche/appdaemon_weatherentity/blob/master/etc/3x2.png =360x)
+<img src="https://github.com/vche/appdaemon_weatherentity/blob/master/etc/3x2.png" width="360">
 
 #### 2x2 widget with 1 forecasts
-![Screenshot](https://github.com/vche/appdaemon_weatherentity/blob/master/etc/2x2.png =240x)
+<img src="https://github.com/vche/appdaemon_weatherentity/blob/master/etc/2x2.png" width="240">
 
 ## Configuration
 
