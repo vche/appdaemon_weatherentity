@@ -1,0 +1,62 @@
+widget_type: base_weatherentity
+entity: {{entity}}
+fields:
+  title: ""
+  show_forecast: 0
+  prefer_icons: 0
+  unit: "°C"
+  wind_unit: "m/s"
+  pressure_unit: "hPa"
+  rain_unit: "%"
+  temperature: ""
+  humidity: ""
+  precip_probability: ""
+  precip_intensity: ""
+  precip_type: ""
+  wind_speed: ""
+  pressure: ""
+  wind_bearing: ""
+  apparent_temperature: ""
+  icon: ""
+  bearing_icon: "mdi-rotate-0"
+  precip_type_icon: "mdi-umbrella"
+  forecast_precip_type_icon: "mdi-umbrella"
+  forecast_title: ""
+  forecast_temperature_min: ""
+  forecast_temperature_max: ""
+  forecast_icon: ""
+  forecast_precip_probability: ""
+  forecast_precip_type: ""
+  # Any additional entry must have its fields declared. Not sure we can use arrays in appdaemon/knockout
+  forecast_title2: ""
+  forecast_temperature_min2: ""
+  forecast_temperature_max2: ""
+  forecast_icon2: ""
+  forecast_precip_probability2: ""
+  forecast_precip_type2: ""
+  forecast_title3: ""
+  forecast_temperature_min3: ""
+  forecast_temperature_max3: ""
+  forecast_icon3: ""
+  forecast_precip_probability3: ""
+  forecast_precip_type3: ""
+  forecast_title4: ""
+  forecast_temperature_min4: ""
+  forecast_temperature_max4: ""
+  forecast_icon4: ""
+  forecast_precip_probability4: ""
+  forecast_precip_type4: ""
+css: []
+static_css:
+  title_style: $weather_sub_style
+  unit_style: $weather_unit_style
+  main_style: $weather_main_style
+  sub_style: $weather_sub_style
+  sub_unit_style: $weather_sub_style
+  widget_style: $weather_widget_style
+icons:
+  snow: mdi-snowflake
+  rain: mdi-umbrella
+  sleet: mdi-weather-snowy-rainy
+  unknown: mdi-umbrella
+static_icons: []
