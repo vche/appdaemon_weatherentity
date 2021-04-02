@@ -1,5 +1,5 @@
 widget_type: base_weatherentity
-entity: {{entity}}
+entity: "{{entity}}"
 fields:
   title: ""
   show_forecast: 0
