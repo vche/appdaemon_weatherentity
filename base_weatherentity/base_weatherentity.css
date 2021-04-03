@@ -66,6 +66,10 @@
     padding: 2px 4px;
 }
 
+.widget-base_weatherentity-{{id}} .vertical-detail-text {
+    font-size: 100%;
+}
+
 .widget-base_weatherentity-{{id}} .secondary-climacon {
     font-family: "Climacons-Font";
     font-size: 30px;

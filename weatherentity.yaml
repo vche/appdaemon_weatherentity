@@ -20,6 +20,7 @@ fields:
   icon: ""
   bearing_icon: "mdi-rotate-0"
   precip_type_icon: "mdi-umbrella"
+  forecast_daily: 1
   forecast_precip_type_icon: "mdi-umbrella"
   forecast_title: ""
   forecast_temperature_min: ""

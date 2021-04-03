@@ -50,6 +50,7 @@ function base_weatherentity(widget_id, url, skin, parameters)
     var monitored_entities = []
 
     self.show_forecast = parameters.show_forecast;
+    self.daily_mode = parameters.forecast_daily;
     // If entity is specified, we are monitoring a weather entity
     if ("entity" in parameters)
     {
@@ -199,13 +200,6 @@ function base_weatherentity(widget_id, url, skin, parameters)
         // forecast_temperature_min: forecast.templow If daily mode only
         if (self.show_forecast)
         {
-            // only in daily mode do we have the temp low
-            var daily_mode = false;
-            if ("templow" in state.attributes.forecast[0])
-            {
-                daily_mode = true;
-            }
-
             // Display required forecast count
             fc_available = Object.keys(state.attributes.forecast).length
             fc_max = (self.show_forecast > fc_available)?fc_available:self.show_forecast;
@@ -217,7 +211,7 @@ function base_weatherentity(widget_id, url, skin, parameters)
                 self.set_field(self, "forecast_icon"+attr_suffix, "mdi mdi-weather-" + forecast.condition);
                 self.set_field(self, "forecast_precip_probability"+attr_suffix, forecast.precipitation);
 
-                if (daily_mode)
+                if (self.daily_mode)
                 {
                     fc_title = "" + (evt_datetime.getMonth() + 1) + "/" + evt_datetime.getDate();
                     self.set_field(self, "forecast_title"+attr_suffix, fc_title);
