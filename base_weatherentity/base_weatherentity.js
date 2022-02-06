@@ -151,6 +151,13 @@ function base_weatherentity(widget_id, url, skin, parameters)
         return closest;
     }
 
+    function get_weather_icon(condition)
+    {
+        // Map weather condition/states with their mdi name. Defaults to the same
+        var icon_map = {'partlycloudy':'partly-cloudy'}
+        return "mdi mdi-weather-" + (icon_map[condition] || condition);
+    }
+
     // Set the view when data are coming from multiple sensors
     function set_view_from_sensors(self, state)
     {
@@ -184,7 +191,7 @@ function base_weatherentity(widget_id, url, skin, parameters)
     {
         // Setbearing icons
         self.set_field(self, "bearing_icon", "mdi-rotate-" + compute_icon_rotation(state.attributes.wind_bearing));
-        self.set_field(self, "icon", "mdi mdi-weather-" + state.state);
+        self.set_field(self, "icon", get_weather_icon(state.state));
 
         // Set measures
         self.set_field(self, "temperature", self.format_number(self, state.attributes.temperature));
@@ -208,8 +215,8 @@ function base_weatherentity(widget_id, url, skin, parameters)
                 attr_suffix = (idx > 0)?idx+1:"";
                 forecast = state.attributes.forecast[idx];
                 evt_datetime = new Date(forecast.datetime);
-                self.set_field(self, "forecast_icon"+attr_suffix, "mdi mdi-weather-" + forecast.condition);
-                self.set_field(self, "forecast_precip_probability"+attr_suffix, forecast.precipitation);
+                self.set_field(self, "forecast_icon"+attr_suffix, get_weather_icon(forecast.condition));
+                self.set_field(self, "forecast_precip_probability"+attr_suffix, forecast.precipitation.toFixed(2));
 
                 if (self.daily_mode)
                 {
