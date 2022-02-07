@@ -73,6 +73,12 @@
   <span class="secondary-info" data-bind="visible: !prefer_icons()">Rain:&nbsp;</span>
   <span class="secondary-info" data-bind="text: forecast_precip_probability"></span>
 </p>
+<p class="secondary-detail" data-bind="visible: forecast_wind_speed">
+  <span class="secondary-icon mdi mdi-weather-windy" data-bind="visible: prefer_icons, css: forecast_bearing_icon, attr: {title: forecast_wind_bearing() + '&deg;'}"></span>
+  <span class="secondary-info" data-bind="visible: !prefer_icons()">Wind:&nbsp;</span>
+  <span class="secondary-info" data-bind="text: forecast_wind_speed"></span>
+   <span class="secondary-unit" data-bind="text: wind_unit, attr: {style: sub_unit_style}"></span>
+</p>  
 </div>
 
 <!-- Column forecast if several to show. not sure if we can have that dynamically in appdaemon -->
@@ -87,16 +93,22 @@
       </div>
       <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_temperature_min">
         <span class="secondary-info" data-bind="text: forecast_temperature_min"></span>
+        <span class="secondary-info" data-bind="visible: forecast_temperature_max">
+          /<span class="secondary-info" data-bind="text: forecast_temperature_max"></span>
+        </span>
         <span class="secondary-info" data-bind="html: unit, attr: {style: sub_unit_style}"></span>
-        <div class="secondary-info" data-bind="visible: forecast_temperature_max">
-          <span class="secondary-info" data-bind="text: forecast_temperature_max"></span>
-          <span class="secondary-info" data-bind="html: unit, attr: {style: sub_unit_style}"></span>
-        </div>
       </div>
-      <div class="vertical-detail" data-bind="visible: forecast_precip_probability">
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_precip_probability">
         <span class="secondary-icon mdi" title="Rain" data-bind="visible: prefer_icons, css: forecast_precip_type_icon"></span>
         <span class="secondary-info" data-bind="visible: !prefer_icons()">Rain:&nbsp;</span>
         <span class="secondary-info" data-bind="text: forecast_precip_probability"></span>
+        <span class="secondary-info" data-bind="html: forecast_precip_unit, attr: {style: sub_unit_style}">mm</span>
+      </div>
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_wind_speed">
+        <span class="secondary-icon mdi mdi-weather-windy" data-bind="visible: prefer_icons, css: forecast_bearing_icon, attr: {title: forecast_wind_bearing() + '&deg;'}"></span>
+        <span class="secondary-info" data-bind="visible: !prefer_icons()">Wind:&nbsp;</span>
+        <span class="secondary-info" data-bind="text: forecast_wind_speed"></span>
+        <span class="secondary-unit" data-bind="text: wind_unit, attr: {style: sub_unit_style}"></span>
       </div>
     </div>
   </div>
@@ -110,17 +122,23 @@
       </div>
       <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_temperature_min2">
         <span class="secondary-info" data-bind="text: forecast_temperature_min2"></span>
+        <span class="secondary-info" data-bind="visible: forecast_temperature_max2">
+          /<span class="secondary-info" data-bind="text: forecast_temperature_max2"></span>
+        </span>
         <span class="secondary-info" data-bind="html: unit, attr: {style: sub_unit_style}"></span>
-        <div class="secondary-info" data-bind="visible: forecast_temperature_max2">
-          <span class="secondary-info" data-bind="text: forecast_temperature_max2"></span>
-          <span class="secondary-info" data-bind="html: unit, attr: {style: sub_unit_style}"></span>
-        </div>
       </div>
-      <div class="vertical-detail" data-bind="visible: forecast_precip_probability2">
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_precip_probability2">
         <span class="secondary-icon mdi" title="Rain" data-bind="visible: prefer_icons, css: forecast_precip_type_icon"></span>
         <span class="secondary-info" data-bind="visible: !prefer_icons()">Rain:&nbsp;</span>
         <span class="secondary-info" data-bind="text: forecast_precip_probability2"></span>
+        <span class="secondary-info" data-bind="html: forecast_precip_unit, attr: {style: sub_unit_style}">mm</span>
       </div>
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_wind_speed2">
+        <span class="secondary-icon mdi mdi-weather-windy" data-bind="visible: prefer_icons, css: forecast_bearing_icon2, attr: {title: forecast_wind_bearing2 + '&deg;'}"></span>
+        <span class="secondary-info" data-bind="visible: !prefer_icons()">Wind:&nbsp;</span>
+        <span class="secondary-info" data-bind="text: forecast_wind_speed2"></span>
+        <span class="secondary-unit" data-bind="text: wind_unit, attr: {style: sub_unit_style}"></span>
+      </div>  
     </div>
   </div>
   <div class="vertical-forecast">
@@ -133,16 +151,22 @@
       </div>
       <div class="vertical-detaili vertical-detail-text" data-bind="visible: forecast_temperature_min3">
         <span class="secondary-info" data-bind="text: forecast_temperature_min3"></span>
+        <span class="secondary-info" data-bind="visible: forecast_temperature_max3">
+          /<span class="secondary-info" data-bind="text: forecast_temperature_max3"></span>
+        </span>
         <span class="secondary-info" data-bind="html: unit, attr: {style: sub_unit_style}"></span>
-        <div class="secondary-info" data-bind="visible: forecast_temperature_max3">
-          <span class="secondary-info" data-bind="text: forecast_temperature_max3"></span>
-          <span class="secondary-info" data-bind="html: unit, attr: {style: sub_unit_style}"></span>
-        </div>
       </div>
-      <div class="vertical-detail" data-bind="visible: forecast_precip_probability3">
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_precip_probability3">
         <span class="secondary-icon mdi" title="Rain" data-bind="visible: prefer_icons, css: forecast_precip_type_icon"></span>
         <span class="secondary-info" data-bind="visible: !prefer_icons()">Rain:&nbsp;</span>
         <span class="secondary-info" data-bind="text: forecast_precip_probability3"></span>
+        <span class="secondary-info" data-bind="html: forecast_precip_unit, attr: {style: sub_unit_style}">mm</span>
+      </div>
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_wind_speed3">
+        <span class="secondary-icon mdi mdi-weather-windy" data-bind="visible: prefer_icons, css: forecast_bearing_icon3, attr: {title: forecast_wind_bearing3 + '&deg;'}"></span>
+        <span class="secondary-info" data-bind="visible: !prefer_icons()">Wind:&nbsp;</span>
+        <span class="secondary-info" data-bind="text: forecast_wind_speed3"></span>
+        <span class="secondary-unit" data-bind="text: wind_unit, attr: {style: sub_unit_style}"></span>
       </div>
     </div>
   </div>
@@ -154,18 +178,24 @@
       <div class="vertical-detail" data-bind="visible: forecast_temperature_min4">
         <span class="secondary-climacon" data-bind="css: forecast_icon4"></span>
       </div>
-      <div class="vertical-detaili vertical-detail-text" data-bind="visible: forecast_temperature_min4">
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_temperature_min4">
         <span class="secondary-info" data-bind="text: forecast_temperature_min4"></span>
+        <span class="secondary-info" data-bind="visible: forecast_temperature_max4">
+          /<span class="secondary-info" data-bind="text: forecast_temperature_max4"></span>
+        </span>
         <span class="secondary-info" data-bind="html: unit, attr: {style: sub_unit_style}"></span>
-        <div class="secondary-info" data-bind="visible: forecast_temperature_max4">
-          <span class="secondary-info" data-bind="text: forecast_temperature_max4"></span>
-          <span class="secondary-info" data-bind="html: unit, attr: {style: sub_unit_style}"></span>
-        </div>
       </div>
-      <div class="vertical-detail" data-bind="visible: forecast_precip_probability4">
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_precip_probability4">
         <span class="secondary-icon mdi" title="Rain" data-bind="visible: prefer_icons, css: forecast_precip_type_icon"></span>
         <span class="secondary-info" data-bind="visible: !prefer_icons()">Rain:&nbsp;</span>
         <span class="secondary-info" data-bind="text: forecast_precip_probability4"></span>
+        <span class="secondary-info" data-bind="html: forecast_precip_unit, attr: {style: sub_unit_style}">mm</span>
+      </div>
+      <div class="vertical-detail vertical-detail-text" data-bind="visible: forecast_wind_speed4">
+        <span class="secondary-icon mdi mdi-weather-windy" data-bind="visible: prefer_icons, css: forecast_bearing_icon4, attr: {title: forecast_wind_bearing4 + '&deg;'}"></span>
+        <span class="secondary-info" data-bind="visible: !prefer_icons()">Wind:&nbsp;</span>
+        <span class="secondary-info" data-bind="text: forecast_wind_speed4"></span>
+        <span class="secondary-unit" data-bind="text: wind_unit, attr: {style: sub_unit_style}"></span>
       </div>
     </div>
   </div></div>

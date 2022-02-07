@@ -18,7 +18,7 @@
 
 .widget-base_weatherentity-{{id}} .primary-climacon {
     font-family: "Climacons-Font";
-    font-size: 70px;
+    font-size: 60px;
 }
 
 .widget-base_weatherentity-{{id}} .primary-info {
@@ -54,7 +54,7 @@
 .widget-base_weatherentity-{{id}} .vertical-forecast {
     display: inline-block;
     vertical-align: middle;
-    padding: 0px 8px;
+    padding: 0px 6px;
     margin-bottom:5px;
     border-right: 1px solid grey;
 }
@@ -122,6 +122,6 @@
     border: 0;
     height: 1px;
     background: rgba(255, 255, 255, 0.25);
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }

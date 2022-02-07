@@ -216,7 +216,12 @@ function base_weatherentity(widget_id, url, skin, parameters)
                 forecast = state.attributes.forecast[idx];
                 evt_datetime = new Date(forecast.datetime);
                 self.set_field(self, "forecast_icon"+attr_suffix, get_weather_icon(forecast.condition));
-                self.set_field(self, "forecast_precip_probability"+attr_suffix, forecast.precipitation.toFixed(2));
+                if (self.parameters.forecast_precip_unit == "%") { precip = forecast.precipitation_probability.toFixed(0); }
+                else { precip = forecast.precipitation.toFixed(1); }
+                self.set_field(self, "forecast_precip_probability"+attr_suffix, precip);
+                self.set_field(self, "forecast_wind_speed"+attr_suffix, self.format_number(self, forecast.wind_speed));
+                self.set_field(self, "forecast_bearing_icon"+attr_suffix, "mdi-rotate-" + compute_icon_rotation(forecast.wind_bearing));
+                self.set_field(self, "forecast_wind_bearing"+attr_suffix, self.format_number(self, forecast.wind_bearing));
 
                 if (self.daily_mode)
                 {
