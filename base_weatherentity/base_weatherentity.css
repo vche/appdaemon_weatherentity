@@ -48,7 +48,7 @@
 }
 
 .widget-base_weatherentity-{{id}} .vertical-forecast-first {
-    border-left: 1px solid grey;
+    border-left: 0px !important;
 }
 
 .widget-base_weatherentity-{{id}} .vertical-forecast {
@@ -56,7 +56,7 @@
     vertical-align: middle;
     padding: 0px 6px;
     margin-bottom:5px;
-    border-right: 1px solid grey;
+    border-left: 1px solid grey;
 }
 
 .widget-base_weatherentity-{{id}} .vertical-detail {
