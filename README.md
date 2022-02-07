@@ -26,7 +26,7 @@ This is fully compliant with the official base widget, so any working configurat
 The configuration is almost identical to the official daemon, with the following differences:
 - ```entity```: Can be specified in place of ```entities``` to use a weather entities instead of a sensor list
 - ```show_forecast``` can be set to the number of forecasts to display (up to 4, 0 = no forecast)
-- ```forecast_daily``` can e set to enable hourly or daily forecast. Defaults to daily.
+- ```forecast_daily``` can e set to enable hourly or daily forecast. Defaults to daily. Must be configured accordingly in homeassistant to have appsaemon receive the correct forecast data.
 - ```forecast_precip_unit``` to specify the precipitation unit for accumulated precip,: "mm" for metric system or "in" for imperial. This only changes the displayed text, the value is configured in homehassistant. If set to "%" the precipitation probability will be displayed instead.
 
 ## Example configuration
