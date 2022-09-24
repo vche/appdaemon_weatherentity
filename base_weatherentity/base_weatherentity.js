@@ -154,7 +154,11 @@ function base_weatherentity(widget_id, url, skin, parameters)
     function get_weather_icon(condition)
     {
         // Map weather condition/states with their mdi name. Defaults to the same
-        var icon_map = {'partlycloudy':'partly-cloudy'}
+        var icon_map = {
+            'partlycloudy':'partly-cloudy',
+            'clear-night':'night',
+            'exceptional': 'cloudy-alert'
+        }
         return "mdi mdi-weather-" + (icon_map[condition] || condition);
     }
 
