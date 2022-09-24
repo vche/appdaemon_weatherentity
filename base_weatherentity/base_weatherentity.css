@@ -54,7 +54,7 @@
 .widget-base_weatherentity-{{id}} .vertical-forecast {
     display: inline-block;
     vertical-align: middle;
-    padding: 0px 6px;
+    padding: 0px 4px;
     margin-bottom:5px;
     border-left: 1px solid grey;
 }
