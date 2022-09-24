@@ -21,6 +21,7 @@ fields:
   bearing_icon: "mdi-rotate-0"
   precip_type_icon: "mdi-umbrella"
   forecast_daily: 1
+  forecast_date_format: "MM/DD"
   forecast_precip_type_icon: "mdi-umbrella"
   forecast_precip_unit: "mm"
   forecast_title: ""

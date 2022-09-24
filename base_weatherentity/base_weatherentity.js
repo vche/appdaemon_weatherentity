@@ -179,6 +179,22 @@ function base_weatherentity(widget_id, url, skin, parameters)
         return precip;
     }
 
+    function pad(num)
+    {
+        return num<10 ? '0' + num : num.toString()
+    }
+
+    function get_date_str(self, datetime)
+    {
+        format = self.parameters.forecast_date_format ? self.parameters.forecast_date_format: self.parameters.fields.forecast_date_format;
+        day = evt_datetime.getDate();
+        month = evt_datetime.getMonth()+1;
+
+        // Replace DD and MM with padded versions then D and M with non padded
+        date_str = format.replace("DD", pad(day)).replace("MM", pad(month)).replace("D", day).replace("M", month);
+        return date_str;
+    }
+
     // Set the view when data are coming from multiple sensors
     function set_view_from_sensors(self, state)
     {
@@ -245,7 +261,7 @@ function base_weatherentity(widget_id, url, skin, parameters)
 
                 if (self.daily_mode)
                 {
-                    fc_title = "" + (evt_datetime.getMonth() + 1) + "/" + evt_datetime.getDate();
+                    fc_title = get_date_str(self, evt_datetime);
                     self.set_field(self, "forecast_title"+attr_suffix, fc_title);
                     self.set_field(self, "forecast_temperature_min"+attr_suffix, self.format_number(self, forecast.templow));
                     self.set_field(self, "forecast_temperature_max"+attr_suffix, self.format_number(self, forecast.temperature));

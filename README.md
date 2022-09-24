@@ -28,6 +28,7 @@ The configuration is almost identical to the official daemon, with the following
 - ```show_forecast``` can be set to the number of forecasts to display (up to 4, 0 = no forecast)
 - ```forecast_daily``` can e set to enable hourly or daily forecast. Defaults to daily. Must be configured accordingly in homeassistant to have appsaemon receive the correct forecast data.
 - ```forecast_precip_unit``` to specify the precipitation unit for accumulated precip,: "mm" for metric system or "in" for imperial. This only changes the displayed text, the value is configured in homehassistant. If set to "%" the precipitation probability will be displayed instead.
+- ```forecast_date_format``` to specify the date format for forecast weather. Defaults to "MM/DD". Non padded dates can be used with single letters, e.g. "D/MM" to get non padded days.
 
 ## Example configuration
 
@@ -38,6 +39,7 @@ openweathermap:
   entity: weather.openweathermap
   show_forecast: 4
   forecast_daily: 1
+  forecast_date_format: "DD/MM"
   prefer_icons: 1
   # Units as configured in homeassistant
   units: "&deg;C"
